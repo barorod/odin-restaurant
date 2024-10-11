@@ -8,6 +8,7 @@ const createTag = (tag, { className = '', ...options }) => {
   //   Object.assign(element, options); // Better way to write the line above
 
   element.className = className;
+
   return element;
 };
 

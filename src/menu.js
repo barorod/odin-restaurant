@@ -1,0 +1,1 @@
+const createTag = require('./createTag');
