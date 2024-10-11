@@ -1,16 +1,24 @@
 import './normalize.css';
 import './style.css';
-const home = require('./home');
-const menu = require('./menu');
+import { home } from './home';
+import { menu } from './menu';
+import { contact } from './contact';
 
 const navs = document.querySelectorAll('nav button');
 const content = document.querySelector('#content');
 
+const pages = {
+  Home: home,
+  Menu: menu,
+  Contact: contact,
+};
+
 navs.forEach((nav) =>
-  nav.addEventListener('click', () => {
-    if (nav.textContent === 'Menu') {
+  nav.addEventListener('click', (e) => {
+    const pageName = e.target.textContent;
+    if (pages[pageName]) {
       content.innerHTML = '';
-      content.appendChild(menu);
+      content.appendChild(pages[pageName]);
     }
   })
 );

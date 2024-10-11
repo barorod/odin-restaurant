@@ -1,4 +1,4 @@
-const createTag = require('./createTag');
+import createTag from './createTag';
 
 const items = [
   {
@@ -32,7 +32,7 @@ const items = [
   },
 ];
 
-const menu = createTag('div', { className: 'menu' });
+const menuContainer = createTag('div', { className: 'menuContainer' });
 
 const menuItems = items.map((item, idx) => {
   const itemWrapper = createTag('div', { id: `${idx + 1}` });
@@ -41,7 +41,9 @@ const menuItems = items.map((item, idx) => {
     textContent: `${item.description}`,
   });
   itemWrapper.append(itemName, itemDescription);
-  menu.appendChild(itemWrapper);
+  return itemWrapper;
 });
 
-module.exports = menu;
+menuContainer.append(...menuItems);
+
+export { menuContainer as menu };

@@ -1,6 +1,6 @@
-const createTag = require('./createTag');
+import createTag from './createTag';
 
-const home = createTag('div', { className: 'home' });
+const homeContainer = createTag('div', { className: 'homeContainer' });
 
 const title = createTag('h1', {
   className: 'title',
@@ -11,7 +11,7 @@ const subTitle = createTag('p', {
   textContent: 'Savor the Flavor of Authentic Cuisine',
 });
 
-home.appendChild(title);
-home.appendChild(subTitle);
+homeContainer.appendChild(title);
+homeContainer.appendChild(subTitle);
 
-module.exports = home;
+export { homeContainer as home };
