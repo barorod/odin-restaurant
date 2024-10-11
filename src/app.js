@@ -1,7 +1,18 @@
 import './normalize.css';
 import './style.css';
-const createHomeContent = require('./home');
+const home = require('./home');
+const menu = require('./menu');
 
+const navs = document.querySelectorAll('nav button');
 const content = document.querySelector('#content');
 
-content.appendChild(createHomeContent());
+navs.forEach((nav) =>
+  nav.addEventListener('click', () => {
+    if (nav.textContent === 'Menu') {
+      content.innerHTML = '';
+      content.appendChild(menu);
+    }
+  })
+);
+
+content.appendChild(home);

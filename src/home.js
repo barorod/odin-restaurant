@@ -11,10 +11,7 @@ const subTitle = createTag('p', {
   textContent: 'Savor the Flavor of Authentic Cuisine',
 });
 
-const createHomeContent = () => {
-  home.appendChild(title);
-  home.appendChild(subTitle);
-  return home;
-};
+home.appendChild(title);
+home.appendChild(subTitle);
 
-module.exports = createHomeContent;
+module.exports = home;
