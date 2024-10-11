@@ -24,3 +24,5 @@ navs.forEach((nav) =>
 );
 
 content.appendChild(home);
+
+alert('I am bad at styling, I will add it soon!');
